@@ -2,6 +2,7 @@
 "use client"
 
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -11,23 +12,38 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu"
 import { Button } from "@/components/ui/button"
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import { Menu } from "lucide-react"
 
 export function MainNavigation() {
+  const pathname = usePathname()
+  
+  // Debug log to see what pathname we're getting
+  console.log('Current pathname:', pathname)
+  
   return (
     <header className="sticky top-10 z-50 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto flex h-14 items-center justify-between px-[300px]">
         <NavigationMenu className="hidden md:flex">
           <NavigationMenuList>
-            <NavigationMenuItem>
-              <Link href="/" passHref>
-                <NavigationMenuLink className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50">
-                  About
-                </NavigationMenuLink>
+          <NavigationMenuItem>
+            <NavigationMenuLink asChild>
+              <Link 
+                href="/" 
+                className={`group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors focus:outline-none disabled:pointer-events-none disabled:opacity-50 ${
+                  pathname === '/' 
+                    ? '!bg-black !text-white hover:!bg-black/90' 
+                    : 'hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground data-[state=open]:bg-accent/50'
+                }`}
+                style={pathname === '/' ? { backgroundColor: '#000000', color: '#ffffff' } : {}}
+              >
+                About
               </Link>
-            </NavigationMenuItem>
+            </NavigationMenuLink>
+          </NavigationMenuItem>
 
             <NavigationMenuItem>
-              <NavigationMenuTrigger>Projects</NavigationMenuTrigger>
+              <NavigationMenuTrigger className="h-10 px-4 py-2 text-sm font-medium">Projects</NavigationMenuTrigger>
               <NavigationMenuContent>
                 <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
                   <li className="row-span-3">
@@ -70,29 +86,115 @@ export function MainNavigation() {
             </NavigationMenuItem>
 
             <NavigationMenuItem>
-              <Link href="/contact" passHref>
-                <NavigationMenuLink className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50">
+              <NavigationMenuLink asChild>
+                <Link 
+                  href="/contact" 
+                  className={`group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors focus:outline-none disabled:pointer-events-none disabled:opacity-50 ${
+                    pathname === '/contact' 
+                      ? 'bg-black text-white hover:bg-black/90' 
+                      : 'hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground data-[state=open]:bg-accent/50'
+                  }`}
+                >
                   Contact
-                </NavigationMenuLink>
-              </Link>
+                </Link>
+              </NavigationMenuLink>
             </NavigationMenuItem>
 
             <NavigationMenuItem>
-              <Link href="/resume" passHref>
-                <NavigationMenuLink className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50">
+              <NavigationMenuLink asChild>
+                <Link 
+                  href="/resume" 
+                  className={`group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[state=open]:bg-accent/50 ${
+                    pathname === '/resume' ? 'bg-black text-white hover:bg-black/90' : 'bg-background'
+                  }`}
+                >
                   Resume
-                </NavigationMenuLink>
-              </Link>
+                </Link>
+              </NavigationMenuLink>
             </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>
 
-        <div className="flex flex-1 items-center justify-between space-x-2 md:justify-end">
-          <div className="w-full flex-1 md:w-auto md:flex-none">
-            {/* Mobile menu would go here */}
+        <div className="flex flex-1 items-center justify-between space-x-2 md:justify-end pl-12">
+          {/* Mobile Menu */}
+          <div className="flex md:hidden">
+            <Sheet>
+              <SheetTrigger asChild>
+                <Button variant="ghost" size="icon">
+                  <Menu className="h-5 w-5" />
+                  <span className="sr-only">Toggle menu</span>
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="right" className="w-[300px] sm:w-[400px]">
+                <div className="sr-only">
+                  <h2>Menu</h2>
+                </div>
+                <nav className="flex flex-col gap-6 mt-6">
+                  <div className="flex flex-col space-y-4">
+                    <Link
+                      href="/"
+                      className={`flex items-center py-2 text-lg font-medium transition-colors hover:text-foreground/80 ${
+                        pathname === '/' ? 'text-foreground' : ''
+                      }`}
+                    >
+                      About
+                    </Link>
+                    
+                    <div className="flex flex-col space-y-3">
+                      <span className="text-lg font-medium">Projects</span>
+                      <div className="flex flex-col space-y-2 ml-4">
+                        <Link
+                          href="/projects"
+                          className="py-1 text-sm text-muted-foreground transition-colors hover:text-foreground"
+                        >
+                          All Projects
+                        </Link>
+                        <Link
+                          href="/projects/web"
+                          className="py-1 text-sm text-muted-foreground transition-colors hover:text-foreground"
+                        >
+                          Web Development
+                        </Link>
+                        <Link
+                          href="/projects/mobile"
+                          className="py-1 text-sm text-muted-foreground transition-colors hover:text-foreground"
+                        >
+                          Mobile Apps
+                        </Link>
+                      </div>
+                    </div>
+                    
+                    <Link
+                      href="/contact"
+                      className={`flex items-center py-2 text-lg font-medium transition-colors hover:text-foreground/80 ${
+                        pathname === '/contact' ? 'text-foreground' : ''
+                      }`}
+                    >
+                      Contact
+                    </Link>
+                    
+                    <Link
+                      href="/resume"
+                      className={`flex items-center py-2 text-lg font-medium transition-colors hover:text-foreground/80 ${
+                        pathname === '/resume' ? 'text-foreground' : ''
+                      }`}
+                    >
+                      Resume
+                    </Link>
+                  </div>
+                  
+                  <div className="pt-4 border-t">
+                    <Button asChild variant="secondary" className="w-full">
+                      <Link href="/contact">Get In Touch</Link>
+                    </Button>
+                  </div>
+                </nav>
+              </SheetContent>
+            </Sheet>
           </div>
+
           <nav className="flex items-center">
-            <Button asChild>
+            <Button asChild variant="secondary">
               <Link href="/contact">
                 Get In Touch
               </Link>
