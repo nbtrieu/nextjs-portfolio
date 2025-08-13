@@ -1,6 +1,6 @@
 // src/app/page.tsx
-import { GitCommitVertical, User } from 'lucide-react';
-import { Card, CardContent } from "@/components/ui/card"
+import { GitCommitVertical, GitBranch, User } from 'lucide-react';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import {
   Carousel,
   CarouselContent,
@@ -8,6 +8,8 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel"
+import { projects } from '@/data';
+import { removeHyphensAndCapitalize } from '@/lib/utils';
 
 export default function Home() {
   return (
@@ -22,14 +24,30 @@ export default function Home() {
               and user-friendly. I'm passionate about writing clean, efficient code and building scalable solutions, and
               I'm always excited to dive into complex and collaborative projects where I can make a real impact.
             </p>
-            <Carousel className="w-full max-w-xs">
+            <Carousel className="w-full max-w-lg">
               <CarouselContent>
-                {Array.from({ length: 5 }).map((_, index) => (
-                  <CarouselItem key={index}>
+                {Array.from(projects).map((project, i) => (
+                  <CarouselItem key={project.name}>
                     <div className="p-1">
                       <Card>
-                        <CardContent className="flex aspect-square items-center justify-center p-6">
-                          <span className="text-4xl font-semibold">{index + 1}</span>
+                        <CardHeader>
+                          <CardTitle className='flex flex-row items-center gap-2'>
+                            <a href={project.link} target="_blank" rel="noopener noreferrer" className="project-text-portfolio">
+                              {removeHyphensAndCapitalize(project.name)}
+                            </a>
+                            <a href={project.repo} target="_blank" rel="noopener noreferrer">
+                              <GitBranch className="w-5 h-5" />
+                            </a>
+                          </CardTitle>
+                          <CardDescription>{project.skills}</CardDescription>
+                        </CardHeader>
+                        <CardContent className="flex items-center justify-center p-6">
+                          <a href={project.link} target="_blank" rel="noopener noreferrer">
+                            <img 
+                              src={`/assets/projects/${project.name}.png`}                            draggable="false"
+                              alt={`${project.name} project screenshot`}
+                            ></img>
+                          </a>
                         </CardContent>
                       </Card>
                     </div>
