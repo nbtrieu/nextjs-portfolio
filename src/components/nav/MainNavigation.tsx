@@ -22,25 +22,25 @@ export function MainNavigation() {
   console.log('Current pathname:', pathname)
   
   return (
-    <header className="sticky top-10 z-50 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-[10px] z-50 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto flex h-14 items-center justify-between px-[300px]">
         <NavigationMenu className="hidden md:flex">
           <NavigationMenuList>
-          <NavigationMenuItem>
-            <NavigationMenuLink asChild>
-              <Link 
-                href="/" 
-                className={`group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors focus:outline-none disabled:pointer-events-none disabled:opacity-50 ${
-                  pathname === '/' 
-                    ? '!bg-black !text-white hover:!bg-black/90' 
-                    : 'hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground data-[state=open]:bg-accent/50'
-                }`}
-                style={pathname === '/' ? { backgroundColor: '#000000', color: '#ffffff' } : {}}
-              >
-                About
-              </Link>
-            </NavigationMenuLink>
-          </NavigationMenuItem>
+            <NavigationMenuItem>
+              <NavigationMenuLink asChild>
+                <Link 
+                  href="/" 
+                  className={`group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors focus:outline-none disabled:pointer-events-none disabled:opacity-50 ${
+                    pathname === '/' 
+                      ? '!bg-black !text-white hover:!bg-black/90' 
+                      : 'hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground data-[state=open]:bg-accent/50'
+                  }`}
+                  style={pathname === '/' ? { backgroundColor: '#000000', color: '#ffffff' } : {}}
+                >
+                  About
+                </Link>
+              </NavigationMenuLink>
+            </NavigationMenuItem>
 
             <NavigationMenuItem>
               <NavigationMenuTrigger className="h-10 px-4 py-2 text-sm font-medium">Projects</NavigationMenuTrigger>
@@ -53,10 +53,10 @@ export function MainNavigation() {
                         href="/projects"
                       >
                         <div className="mb-2 mt-4 text-lg font-medium">
-                          Featured Project
+                          Full Stack Projects
                         </div>
                         <p className="text-sm leading-tight text-muted-foreground">
-                          Check out my latest work and side projects.
+                          Check out my end-to-end web apps.
                         </p>
                       </Link>
                     </NavigationMenuLink>
@@ -64,9 +64,11 @@ export function MainNavigation() {
                   <li>
                     <NavigationMenuLink asChild>
                       <Link href="/projects/web" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
-                        <div className="text-sm font-medium leading-none">Web Development</div>
+                        <div className="text-sm font-medium leading-none">
+                          Back-End Projects
+                        </div>
                         <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                          React, Next.js, and modern web applications.
+                          Server-side infrastructure and services.
                         </p>
                       </Link>
                     </NavigationMenuLink>
@@ -74,9 +76,11 @@ export function MainNavigation() {
                   <li>
                     <NavigationMenuLink asChild>
                       <Link href="/projects/mobile" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
-                        <div className="text-sm font-medium leading-none">Mobile Apps</div>
+                        <div className="text-sm font-medium leading-none">
+                          API Development
+                        </div>
                         <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                          iOS and Android applications.
+                          REST and GraphQL implementations.
                         </p>
                       </Link>
                     </NavigationMenuLink>

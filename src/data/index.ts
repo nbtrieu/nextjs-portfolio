@@ -1,7 +1,7 @@
 export const projects = [
   {
     name: 'meet-and-treats',
-    skills: 'MERN / Node / React / MongoDB / Graphql',
+    skills: 'MERN / Node / React / MongoDB / GraphQL',
     link: '',
     repo: 'https://github.com/nbtrieu/meet-n-treats'
   },

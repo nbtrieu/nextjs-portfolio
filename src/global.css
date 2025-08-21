@@ -1,3 +1,38 @@
 h1 {
   font-size: 1.5rem;
 }
+
+/* Responsive container padding */
+/* Only target mobile and small tablets, preserve desktop */
+.responsive-container {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+@media (min-width: 640px) {
+  .responsive-container {
+    padding-left: 8rem;  /* 128px - your original sm:px-32 */
+    padding-right: 8rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .responsive-container {
+    padding-left: 8rem;  /* 128px - your original md:px-32 */
+    padding-right: 8rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .responsive-container {
+    padding-left: 8rem;  /* 128px - your original lg:px-32 */
+    padding-right: 8rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .responsive-container {
+    padding-left: 300px;  /* your original xl:px-[300px] */
+    padding-right: 300px;
+  }
+}
