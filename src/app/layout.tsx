@@ -1,7 +1,9 @@
 // src/app/layout.tsx
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { GitCommitVertical, User } from 'lucide-react';
 import "./globals.css";
+import "../styles/custom.css";
 import { MainNavigation } from "@/components/nav/MainNavigation";
 
 const geistSans = Geist({
@@ -27,10 +29,30 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased min-h-screen flex flex-col`}
       >
         <MainNavigation />
-        <main className="flex-1 flex items-center justify-center">{children}</main>
+        <main className="flex-1">{children}</main>
+          <footer className="container mx-auto px-4 sm:px-8 md:px-32 lg:px-32 xl:px-[300px] flex gap-4 sm:gap-[24px] flex-wrap items-center justify-center py-4">
+            <a
+              className="flex items-center gap-1 text-sm sm:text-base text-neutral-600 transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
+              href="https://github.com/nbtrieu"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <GitCommitVertical className="w-4 h-4 sm:w-5 sm:h-5" />
+              GitHub
+            </a>
+            <a
+              className="flex items-center gap-1 text-sm text-neutral-600 transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
+              href="https://www.linkedin.com/in/nicole-nghi-trieu/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <User className="w-4 h-4 sm:w-5 sm:h-5" />
+              LinkedIn
+            </a>
+          </footer>
       </body>
     </html>
   );
