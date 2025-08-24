@@ -40,8 +40,9 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased min-h-screen flex flex-col`}
       >
         <MainNavigation />
-        <main className="flex-1">{children}</main>
-          <footer className="container mx-auto px-4 sm:px-8 md:px-32 lg:px-32 xl:px-[300px] flex gap-4 sm:gap-[24px] flex-wrap items-center justify-center py-4">
+        <main className="flex-1 pb-20">{children}</main>
+        <footer className="fixed bottom-0 left-0 right-0 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 z-10">
+          <div className="container mx-auto px-4 sm:px-8 md:px-32 lg:px-32 xl:px-[300px] flex gap-4 sm:gap-[24px] flex-wrap items-center justify-center py-4">
             <a
               className="flex items-center gap-1 text-sm sm:text-base text-neutral-600 transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
               href="https://github.com/nbtrieu"
@@ -60,7 +61,8 @@ export default function RootLayout({
               <User className="w-4 h-4 sm:w-5 sm:h-5" />
               LinkedIn
             </a>
-          </footer>
+          </div>
+        </footer>
       </body>
     </html>
   );

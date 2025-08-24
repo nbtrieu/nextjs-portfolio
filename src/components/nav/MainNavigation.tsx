@@ -75,7 +75,7 @@ export function MainNavigation() {
                           Front-End Projects
                         </div>
                         <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                          Interactive web applications built with vanilla JavaScript, HTML, and CSS
+                          Interactive web applications built with vanilla JavaScript/HTML/CSS.
                         </p>
                       </Link>
                     </NavigationMenuLink>
