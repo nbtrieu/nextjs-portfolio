@@ -197,7 +197,7 @@ export function MainNavigation() {
                   </div>
                   
                   <div className="pt-4 border-t">
-                    <Button asChild variant="secondary" className="w-full">
+                    <Button asChild variant="outline" className="w-full">
                       <Link href="/contact">Get In Touch</Link>
                     </Button>
                   </div>
@@ -207,7 +207,7 @@ export function MainNavigation() {
           </div>
 
           <nav className="flex items-center">
-            <Button asChild variant="secondary">
+            <Button asChild variant="ghost" className="border border-black">
               <Link href="/contact">
                 Get In Touch
               </Link>
