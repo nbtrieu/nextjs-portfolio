@@ -32,7 +32,7 @@ export function MainNavigation() {
                   href="/" 
                   className={`group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors focus:outline-none disabled:pointer-events-none disabled:opacity-50 ${
                     pathname === '/' 
-                      ? '!bg-black !text-white hover:!bg-black/90' 
+                      ? '!bg-black !text-white hover:!bg-black/90 dark:!bg-foreground dark:!text-background' 
                       : 'hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground data-[state=open]:bg-accent/50'
                   }`}
                   style={pathname === '/' ? { backgroundColor: '#000000', color: '#ffffff' } : {}}
@@ -46,7 +46,7 @@ export function MainNavigation() {
               <NavigationMenuTrigger
                   className={`group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors focus:outline-none disabled:pointer-events-none disabled:opacity-50 ${
                     pathname.includes('projects')
-                      ? '!bg-black !text-white hover:!bg-black/90' 
+                      ? '!bg-black !text-white hover:!bg-black/90 dark:!bg-foreground dark:!text-background' 
                       : 'hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground data-[state=open]:bg-accent/50'
                   }`}
                   style={pathname.includes('projects') ? { backgroundColor: '#000000', color: '#ffffff' } : {}}
@@ -57,7 +57,7 @@ export function MainNavigation() {
                     <NavigationMenuLink asChild>
                       <Link
                         className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
-                        href="/projects#full-stack"
+                        href="/projects"
                       >
                         <div className="mb-2 mt-4 text-lg font-medium">
                           Full Stack Projects
@@ -102,9 +102,10 @@ export function MainNavigation() {
                   href="/contact" 
                   className={`group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors focus:outline-none disabled:pointer-events-none disabled:opacity-50 ${
                     pathname === '/contact' 
-                      ? 'bg-black text-white hover:bg-black/90' 
+                      ? '!bg-black !text-white hover:!bg-black/90 dark:!bg-foreground dark:!text-background' 
                       : 'hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground data-[state=open]:bg-accent/50'
                   }`}
+                  style={pathname === '/contact' ? { backgroundColor: '#000000', color: '#ffffff' } : {}}
                 >
                   Contact
                 </Link>
@@ -117,9 +118,10 @@ export function MainNavigation() {
                   href="/resume" 
                   className={`group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors focus:outline-none disabled:pointer-events-none disabled:opacity-50 ${
                     pathname === '/resume' 
-                      ? 'bg-black text-white hover:bg-black/90' 
+                      ? '!bg-black !text-white hover:!bg-black/90 dark:!bg-foreground dark:!text-background' 
                       : 'hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground data-[state=open]:bg-accent/50'
                   }`}
+                  style={pathname === '/resume' ? { backgroundColor: '#000000', color: '#ffffff' } : {}}
                 >
                   Resume
                 </Link>
@@ -146,41 +148,51 @@ export function MainNavigation() {
                   <div className="flex flex-col space-y-4">
                     <Link
                       href="/"
-                      className={`flex items-center py-2 text-lg font-medium transition-colors hover:text-foreground/80 ${
-                        pathname === '/' ? 'text-foreground' : ''
+                      className={`flex items-center py-2 px-3 text-lg font-medium rounded-md transition-colors hover:text-foreground/80 ${
+                        pathname === '/' 
+                          ? 'bg-black text-white dark:bg-foreground dark:text-background' 
+                          : 'hover:bg-accent hover:text-accent-foreground'
                       }`}
                     >
                       About
                     </Link>
                     
                     <div className="flex flex-col space-y-3">
-                      <span className="text-lg font-medium">Projects</span>
+                      <span className={`text-lg font-medium px-3 py-2 rounded-md ${
+                        pathname.includes('projects') 
+                          ? 'bg-black text-white dark:bg-foreground dark:text-background' 
+                          : ''
+                      }`}>
+                        Projects
+                      </span>
                       <div className="flex flex-col space-y-2 ml-4">
                         <Link
                           href="/projects"
-                          className="py-1 text-sm text-muted-foreground transition-colors hover:text-foreground"
+                          className="py-1 px-3 text-sm text-muted-foreground transition-colors hover:text-foreground rounded-md hover:bg-accent"
                         >
-                          All Projects
+                          Full Stack Projects
                         </Link>
                         <Link
-                          href="/projects/web"
-                          className="py-1 text-sm text-muted-foreground transition-colors hover:text-foreground"
+                          href="/projects#front-end"
+                          className="py-1 px-3 text-sm text-muted-foreground transition-colors hover:text-foreground rounded-md hover:bg-accent"
                         >
-                          Web Development
+                          Front-End Projects
                         </Link>
                         <Link
-                          href="/projects/mobile"
-                          className="py-1 text-sm text-muted-foreground transition-colors hover:text-foreground"
+                          href="/projects#back-end"
+                          className="py-1 px-3 text-sm text-muted-foreground transition-colors hover:text-foreground rounded-md hover:bg-accent"
                         >
-                          Mobile Apps
+                          Back-End Projects
                         </Link>
                       </div>
                     </div>
                     
                     <Link
                       href="/contact"
-                      className={`flex items-center py-2 text-lg font-medium transition-colors hover:text-foreground/80 ${
-                        pathname === '/contact' ? 'text-foreground' : ''
+                      className={`flex items-center py-2 px-3 text-lg font-medium rounded-md transition-colors hover:text-foreground/80 ${
+                        pathname === '/contact' 
+                          ? 'bg-black text-white dark:bg-foreground dark:text-background' 
+                          : 'hover:bg-accent hover:text-accent-foreground'
                       }`}
                     >
                       Contact
@@ -188,8 +200,10 @@ export function MainNavigation() {
                     
                     <Link
                       href="/resume"
-                      className={`flex items-center py-2 text-lg font-medium transition-colors hover:text-foreground/80 ${
-                        pathname === '/resume' ? 'text-foreground' : ''
+                      className={`flex items-center py-2 px-3 text-lg font-medium rounded-md transition-colors hover:text-foreground/80 ${
+                        pathname === '/resume' 
+                          ? 'bg-black text-white dark:bg-foreground dark:text-background' 
+                          : 'hover:bg-accent hover:text-accent-foreground'
                       }`}
                     >
                       Resume
@@ -197,7 +211,7 @@ export function MainNavigation() {
                   </div>
                   
                   <div className="pt-4 border-t">
-                    <Button asChild variant="outline" className="w-full">
+                    <Button asChild variant="ghost" className="w-full border border-black dark:border-foreground">
                       <Link href="/contact">Get In Touch</Link>
                     </Button>
                   </div>
@@ -207,7 +221,7 @@ export function MainNavigation() {
           </div>
 
           <nav className="flex items-center">
-            <Button asChild variant="ghost" className="border border-black">
+            <Button asChild variant="ghost" className="border border-black dark:border-foreground">
               <Link href="/contact">
                 Get In Touch
               </Link>

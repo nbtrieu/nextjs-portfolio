@@ -46,7 +46,7 @@ export default function RootLayout({
           <footer className="fixed bottom-0 left-0 right-0 bg-inherit z-10">
             <div className="container mx-auto px-4 sm:px-8 md:px-32 lg:px-32 xl:px-[300px] flex gap-4 sm:gap-[24px] flex-wrap items-center justify-center py-4">
               <a
-                className="flex items-center gap-1 text-sm sm:text-base text-neutral-600 transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
+                className="flex items-center gap-1 text-sm sm:text-base text-neutral-600 dark:text-muted-foreground transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
                 href="https://github.com/nbtrieu"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -55,7 +55,7 @@ export default function RootLayout({
                 GitHub
               </a>
               <a
-                className="flex items-center gap-1 text-sm text-neutral-600 transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
+                className="flex items-center gap-1 text-sm sm:text-base text-neutral-600 dark:text-muted-foreground transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
                 href="https://www.linkedin.com/in/nicole-nghi-trieu/"
                 target="_blank"
                 rel="noopener noreferrer"

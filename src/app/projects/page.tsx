@@ -74,7 +74,7 @@ export default function Projects() {
                       </Popover>
                       
                       {project.link && project.link !== '' && (
-                        <Button variant="outline" size="sm" asChild>
+                        <Button variant="secondary" size="sm" asChild>
                           <a href={project.link} target="_blank" rel="noopener noreferrer">
                             Visit Project
                           </a>

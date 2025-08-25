@@ -8,6 +8,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel"
+import { NameTag } from '@/components/name-tag/NameTag';
 import { projects } from '@/data';
 import { removeHyphensAndCapitalize } from '@/lib/utils';
 
@@ -20,11 +21,7 @@ export default function Home() {
             {/* <h1 className="text-2xl sm:text-4xl font-semibold tracking-tighter">
               Nicole Trieu
             </h1> */}
-            <img
-              src="name.svg"
-              draggable="false"
-              className="h-12 sm:h-15 w-auto"
-            />
+            <NameTag/>
             <p className="mb-4 sm:mb-6 text-sm sm:text-base mt-3 sm:mt-4 leading-relaxed">
               Hey there! I'm a Full Stack Developer with a background in Science Education and a love for lifelong learning.
               I enjoy combining my communication skills with problem-solving to create applications that are both powerful
