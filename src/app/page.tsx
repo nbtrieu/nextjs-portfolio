@@ -1,18 +1,17 @@
 // src/app/page.tsx
-import { GitBranch } from 'lucide-react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel"
+"use client"
+
+import { useRef } from 'react';
+import { ProjectsCarousel } from '@/components/carousel/ProjectsCarousel';
+import Autoplay from "embla-carousel-autoplay"
 import { NameTag } from '@/components/name-tag/NameTag';
 import { projects } from '@/data';
-import { removeHyphensAndCapitalize } from '@/lib/utils';
 
 export default function Home() {
+  const plugin = useRef(
+    Autoplay({ delay: 2000, stopOnInteraction: true })
+  )
+
   return (
     <div className="p-4 sm:p-6 lg:p-8">
       <div className="container mx-auto px-4 sm:px-8 md:px-32 lg:px-32 xl:px-[300px]">
@@ -30,38 +29,12 @@ export default function Home() {
             </p>
           </div>
 
-          <Carousel className="w-full max-w-xlg">
-            <CarouselContent>
-              {Array.from(projects).map((project, i) => (
-                <CarouselItem key={project.imgFileName}>
-                  <Card className='rounded-lg border-slate-500'>
-                    <CardHeader>
-                      <CardTitle className='flex flex-row items-center gap-2'>
-                        <a href={project.link} target="_blank" rel="noopener noreferrer" className="project-text-portfolio">
-                          {project.name}
-                        </a>
-                        <a href={project.repo} target="_blank" rel="noopener noreferrer">
-                          <GitBranch className="w-5 h-5" />
-                        </a>
-                      </CardTitle>
-                      <CardDescription>{project.skills}</CardDescription>
-                    </CardHeader>
-                    <CardContent className="flex items-center justify-center">
-                      <a href={project.link} target="_blank" rel="noopener noreferrer">
-                        <img
-                          src={`/assets/projects/${project.imgFileName}.png`}
-                          draggable="false"
-                          alt={`${project.name} project screenshot`}
-                        />
-                      </a>
-                    </CardContent>
-                  </Card>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
-          </Carousel>
+          <ProjectsCarousel
+            projects={projects}
+            plugins={[plugin.current]}
+            onMouseEnter={plugin.current.stop}
+            onMouseLeave={plugin.current.reset}
+          />
         </section>
       </div>
     </div>

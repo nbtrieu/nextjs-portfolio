@@ -20,6 +20,16 @@ export const projects = [
     descriptionBody: 'Users can create an account and create posts to journal their thoughts and select from a range of moods that convey how they are feeling. Users can enhance their posts by addings songs or playlists from Spotify, view others’ moods through a feed timeline, filter posts associated with any of the five key emotions from both the feed and their profile page, save posts from their feed, and edit/delete their own posts.'
   },
   {
+    name: "Next.js Portfolio",
+    imgFileName: 'nextjs-portfolio',
+    skills: 'Next.js / React / Shadcn UI / Tailwind',
+    link: 'https://nbtrieu.github.io/nextjs-portfolio',
+    repo: 'https://github.com/nbtrieu/nextjs-portfolio',
+    section: 'front-end',
+    descriptionTitle: '',
+    descriptionBody: 'Portfolio website built with Next.js featuring a responsive design system, theme switching capabilities, and reusable component architecture. Implements modern React patterns with TypeScript for type safety and uses Shadcn UI components for consistent styling across the application.'
+  },
+  {
     name: "Pokemon Battle Simulator",
     imgFileName: 'pokemon-battle-simulator',
     skills: 'JavaScript / HTML / FoundationCSS',

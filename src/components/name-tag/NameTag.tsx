@@ -1,4 +1,3 @@
-// Create this file: src/components/ui/theme-name.tsx
 "use client"
 
 import { useTheme } from 'next-themes'
@@ -15,7 +14,7 @@ export function NameTag() {
   // Show a placeholder during initial render to prevent hydration mismatch
   if (!mounted) {
     return (
-      <div className="h-12 sm:h-15 w-auto bg-transparent" style={{ width: '200px' }}>
+      <div className="h-4 sm:h-12 w-auto bg-transparent" style={{ width: '200px' }}>
         {/* Invisible placeholder to maintain layout */}
       </div>
     )
