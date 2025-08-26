@@ -1,11 +1,13 @@
+// src/components/name-tag/NameTag.tsx
 "use client"
 
 import { useTheme } from 'next-themes'
+import Image from 'next/image'
 import { useEffect, useState } from 'react'
 
 export function NameTag() {
   const [mounted, setMounted] = useState(false)
-  const { theme, resolvedTheme } = useTheme()
+  const { resolvedTheme } = useTheme()
 
   useEffect(() => {
     setMounted(true)
@@ -23,11 +25,13 @@ export function NameTag() {
   const isDark = resolvedTheme === 'dark'
 
   return (
-    <img
+    <Image
       src={isDark ? "name-dark.svg" : "name.svg"}
       draggable="false"
       className="h-12 sm:h-15 w-auto"
       alt="Nicole Trieu"
+      width={200}
+      height={50} 
     />
   )
 }

@@ -6,6 +6,7 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
+  type CarouselApi
 } from "@/components/ui/carousel"
 import { Button } from "@/components/ui/button"
 import {
@@ -13,11 +14,13 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover"
-import { AppTypes } from '@/types';
+import { AppTypes } from '@/types'
+import Image from 'next/image'
+import { ComponentProps } from 'react'
 
 interface ProjectsCarouselProps {
   projects: AppTypes.Project[]
-  plugins?: any[]
+  plugins?: ComponentProps<typeof Carousel>['plugins']
   onMouseEnter?: () => void
   onMouseLeave?: () => void
   carouselClassName?: string
@@ -25,10 +28,10 @@ interface ProjectsCarouselProps {
   showDetails?: boolean
 }
 
-export function ProjectsCarousel({ 
-  projects, 
-  plugins, 
-  onMouseEnter, 
+export function ProjectsCarousel({
+  projects,
+  plugins,
+  onMouseEnter,
   onMouseLeave,
   carouselClassName = "w-full max-w-xlg",
   itemClassName = "",
@@ -61,17 +64,19 @@ export function ProjectsCarousel({
                 <CardDescription>{project.skills}</CardDescription>
               </CardHeader>
               <CardContent className="pt-2 pb-2 flex-1 flex flex-col justify-center">
-                <a 
+                <a
                   href={`/assets/projects/${project.imgFileName}.png`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block w-full"
                 >
-                  <img
+                  <Image
                     src={`/assets/projects/${project.imgFileName}.png`}
                     draggable="false"
                     alt={`${project.name} project screenshot`}
                     className={'rounded-md w-full h-auto cursor-pointer transition-transform hover:scale-105'}
+                    width={500}
+                    height={300}
                   />
                 </a>
               </CardContent>
@@ -88,7 +93,6 @@ export function ProjectsCarousel({
                       <p className="text-sm">{project.descriptionBody}</p>
                     </PopoverContent>
                   </Popover>
-                  
                   {project.link && project.link !== '' && (
                     <Button variant="secondary" size="sm" asChild>
                       <a href={project.link} target="_blank" rel="noopener noreferrer">

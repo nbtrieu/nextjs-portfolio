@@ -77,7 +77,7 @@ export default function Contact() {
           Get In Touch
         </h1>
         <p className='text-md'>
-          Got a project in mind or want to discuss opportunities? I'd love to connect and hear from you!
+          Got a project in mind or want to discuss opportunities? I&apos;d love to connect and hear from you!
         </p>
       </div>
 
@@ -88,7 +88,7 @@ export default function Contact() {
             Send a Message
           </CardTitle>
           <CardDescription>
-            Fill out the form below and I'll get back to you ASAP.
+            Fill out the form below and I&apos;ll get back to you ASAP.
           </CardDescription>
         </CardHeader>
         <CardContent className='pt-2 pb-2 grid gap-6'>
@@ -173,7 +173,7 @@ export default function Contact() {
             {submitStatus == 'success' && (
               <div className="p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-md">
                 <p className="text-green-700 dark:text-green-300">
-                  Message sent successfully! I'll get back to you soon.
+                  Message sent successfully! I&apos;ll get back to you soon.
                 </p>
               </div>
             )}
