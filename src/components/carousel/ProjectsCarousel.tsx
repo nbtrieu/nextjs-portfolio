@@ -70,13 +70,12 @@ export function ProjectsCarousel({
                   rel="noopener noreferrer"
                   className="block w-full"
                 >
-                  <Image
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
                     src={`/assets/projects/${project.imgFileName}.png`}
                     draggable="false"
                     alt={`${project.name} project screenshot`}
                     className={'rounded-md w-full h-auto cursor-pointer transition-transform hover:scale-105'}
-                    width={500}
-                    height={300}
                   />
                 </a>
               </CardContent>
