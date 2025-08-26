@@ -13,7 +13,7 @@ export default function Home() {
   )
 
   return (
-    <section>
+    <>
       <div className='flex flex-col items-start'>
         {/* <h1 className="text-2xl sm:text-4xl font-semibold tracking-tighter">
           Nicole Trieu
@@ -32,7 +32,8 @@ export default function Home() {
         plugins={[plugin.current]}
         onMouseEnter={plugin.current.stop}
         onMouseLeave={plugin.current.reset}
+        itemClassName='basis-1/2 flex pl-4'
       />
-    </section>
+    </>
   );
 }

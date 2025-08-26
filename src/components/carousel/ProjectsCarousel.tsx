@@ -30,7 +30,7 @@ export function ProjectsCarousel({
   plugins, 
   onMouseEnter, 
   onMouseLeave,
-  carouselClassName = "w-full max-w-lg",
+  carouselClassName = "w-full max-w-xlg",
   itemClassName = "",
   showDetails = false
 }: ProjectsCarouselProps) {

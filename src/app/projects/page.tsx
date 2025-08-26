@@ -9,7 +9,7 @@ export default function Projects() {
   const sections = ["full-stack", "front-end", "back-end"]
   
   return (
-    <>
+    <div className=''>
       <div className='mb-12'>
         <h1 className="sm:mb-6 text-2xl sm:text-4xl font-semibold tracking-tighter">
           Projects
@@ -34,6 +34,6 @@ export default function Projects() {
           )
         })}
       </div>
-    </>
+    </div>
   )
 }

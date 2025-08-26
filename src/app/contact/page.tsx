@@ -71,7 +71,7 @@ export default function Contact() {
   }
 
   return (
-    <div className='max-w-xl mx-auto py-4'>
+    <div className=''>
       <div className='mb-12'>
         <h1 className="sm:mb-6 text-2xl sm:text-4xl font-semibold tracking-tighter">
           Get In Touch

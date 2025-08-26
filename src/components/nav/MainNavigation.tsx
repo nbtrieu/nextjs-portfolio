@@ -23,8 +23,7 @@ export function MainNavigation() {
   
   return (
     <header className="sticky top-[0px] z-50 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container mx-auto flex h-14 items-center justify-between px-[300px]">
-        <NavigationMenu className="hidden md:flex">
+      <div className="flex h-14 items-center justify-between px-4 sm:px-8 md:px-32 lg:px-32 xl:px-[300px]">        <NavigationMenu className="hidden md:flex">
           <NavigationMenuList>
             <NavigationMenuItem>
               <NavigationMenuLink asChild>

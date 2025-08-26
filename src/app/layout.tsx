@@ -45,13 +45,13 @@ export default function RootLayout({
       >
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
         <MainNavigation />
-        <main className="flex-1 p-4 sm:p-6 lg:p-8">
-          <div className="container mx-auto px-4 sm:px-8 md:px-32 lg:px-32 xl:px-[300px]">
+        <main className="flex-1 py-4 sm:py-6 lg:py-8">
+          <div className="px-4 sm:px-8 md:px-32 lg:px-32 xl:px-[300px]">
             {children}
           </div>
         </main>
         <footer className="bg-inherit border-t border-gray-200 dark:border-gray-800">
-          <div className="container mx-auto px-4 sm:px-8 md:px-32 lg:px-32 xl:px-[300px] flex gap-4 sm:gap-[24px] flex-wrap items-center justify-center py-4">
+          <div className="px-4 sm:px-8 md:px-32 lg:px-32 xl:px-[300px] flex gap-4 sm:gap-[24px] flex-wrap items-center justify-center py-4">
             <a
                 className="flex items-center gap-1 text-sm sm:text-base text-neutral-600 dark:text-muted-foreground transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
               href="https://github.com/nbtrieu"

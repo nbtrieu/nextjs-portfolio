@@ -1,3 +1,6 @@
+// src/data/index.ts
+import { Code, Globe, Server, Database, Cloud, Wrench, Palette } from 'lucide-react';
+
 export const projects = [
   {
     name: "Meet and Treats",
@@ -100,3 +103,51 @@ export const projects = [
     descriptionBody: 'Command-line application built to allow companies and non-developers to easily view and interact with information stored in databases about their employees.'
   }
 ];
+
+export const skills = {
+    Languages: {
+      icon: Code,
+      color: 'blue',
+      skills: ['Python', 'JavaScript', 'TypeScript', 'SQL', 'Gremlin', 'HTML5', 'CSS3']
+    },
+    Frontend: {
+      icon: Globe,
+      color: 'green',
+      skills: ['React.js', 'Next.js', 'Redux', 'Shadcn UI', 'Tailwind', 'jQuery', 'Bootstrap']
+    },
+    Backend: {
+      icon: Server,
+      color: 'purple',
+      skills: ['FastAPI', 'Flask', 'Node.js', 'Express.js', 'SQLAlchemy', 'Celery', 'Pydantic']
+    },
+    'APIs & Integration': {
+      icon: Database,
+      color: 'indigo',
+      skills: ['REST APIs', 'GraphQL', 'Apollo GraphQL', 'OpenAPI/Swagger UI']
+    },
+    Databases: {
+      icon: Database,
+      color: 'cyan',
+      skills: ['PostgreSQL', 'MySQL', 'MongoDB', 'Amazon RDS', 'Alembic', 'Amazon Neptune', 'Amazon DocumentDB']
+    },
+    'Cloud & DevOps': {
+      icon: Cloud,
+      color: 'orange',
+      skills: ['AWS (S3, EC2, Lambda, Amplify, AppSync)', 'Vercel', 'GitHub Pages', 'Heroku']
+    },
+    'Development Tools': {
+      icon: Wrench,
+      color: 'slate',
+      skills: ['Git/GitHub', 'Visual Studio Code', 'Jupyter Notebook', 'Poetry', 'pip', 'Pandas']
+    },
+    'Database Tools': {
+      icon: Database,
+      color: 'teal',
+      skills: ['Gremlin Console', 'MongoDB Compass', 'pgAdmin4', 'MySQL Workbench', 'Apache TinkerPop']
+    },
+    'Design & Testing': {
+      icon: Palette,
+      color: 'pink',
+      skills: ['Figma', 'Canva', 'Insomnia']
+    }
+  };
