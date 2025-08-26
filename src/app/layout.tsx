@@ -43,7 +43,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased min-h-screen flex flex-col`}
       >
-        <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
         <MainNavigation />
         <main className="flex-1 py-4 sm:py-6 lg:py-8">
           <div className="px-4 sm:px-8 md:px-32 lg:px-32 xl:px-[300px]">

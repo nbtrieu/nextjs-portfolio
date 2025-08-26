@@ -18,9 +18,6 @@ import { Menu } from "lucide-react"
 export function MainNavigation() {
   const pathname = usePathname()
   
-  // Debug log to see what pathname we're getting
-  console.log('Current pathname:', pathname)
-  
   return (
     <header className="sticky top-[0px] z-50 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="flex h-14 items-center justify-between px-4 sm:px-8 md:px-32 lg:px-32 xl:px-[300px]">        <NavigationMenu className="hidden md:flex">
