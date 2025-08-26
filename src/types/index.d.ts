@@ -9,4 +9,11 @@ export namespace AppTypes {
     descriptionTitle: string
     descriptionBody: string
   }
+
+  export interface ContactFormData {
+    firstName: string
+    lastName: string
+    email: string
+    message: string
+  }
 }

@@ -13,30 +13,26 @@ export default function Home() {
   )
 
   return (
-    <div className="p-4 sm:p-6 lg:p-8">
-      <div className="container mx-auto px-4 sm:px-8 md:px-32 lg:px-32 xl:px-[300px]">
-        <section>
-          <div className='flex flex-col items-start'>
-            {/* <h1 className="text-2xl sm:text-4xl font-semibold tracking-tighter">
-              Nicole Trieu
-            </h1> */}
-            <NameTag/>
-            <p className="mb-4 sm:mb-6 text-sm sm:text-base mt-3 sm:mt-4 leading-relaxed">
-              Hey there! I'm a Full Stack Developer with a background in Science Education and a love for lifelong learning.
-              I enjoy combining my communication skills with problem-solving to create applications that are both powerful
-              and user-friendly. I'm passionate about writing clean, efficient code and building scalable solutions, and
-              I'm always excited to dive into complex and collaborative projects where I can make a real impact.
-            </p>
-          </div>
-
-          <ProjectsCarousel
-            projects={projects}
-            plugins={[plugin.current]}
-            onMouseEnter={plugin.current.stop}
-            onMouseLeave={plugin.current.reset}
-          />
-        </section>
+    <section>
+      <div className='flex flex-col items-start'>
+        {/* <h1 className="text-2xl sm:text-4xl font-semibold tracking-tighter">
+          Nicole Trieu
+        </h1> */}
+        <NameTag/>
+        <p className="mb-4 sm:mb-6 text-sm sm:text-base mt-3 sm:mt-4 leading-relaxed">
+          Hey there! I'm a Full Stack Developer with a background in Science Education and a love for lifelong learning.
+          I enjoy combining my communication skills with problem-solving to create applications that are both powerful
+          and user-friendly. I'm passionate about writing clean, efficient code and building scalable solutions, and
+          I'm always excited to dive into complex and collaborative projects where I can make a real impact.
+        </p>
       </div>
-    </div>
+
+      <ProjectsCarousel
+        projects={projects}
+        plugins={[plugin.current]}
+        onMouseEnter={plugin.current.stop}
+        onMouseLeave={plugin.current.reset}
+      />
+    </section>
   );
 }

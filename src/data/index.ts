@@ -22,8 +22,8 @@ export const projects = [
   {
     name: "Next.js Portfolio",
     imgFileName: 'nextjs-portfolio',
-    skills: 'Next.js / React / Shadcn UI / Tailwind',
-    link: 'https://nbtrieu.github.io/nextjs-portfolio',
+    skills: 'TypeScript / Next.js / Vercel / Shadcn UI / Tailwind',
+    link: 'https://nicoletrieu.vercel.app',
     repo: 'https://github.com/nbtrieu/nextjs-portfolio',
     section: 'front-end',
     descriptionTitle: '',
