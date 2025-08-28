@@ -7,7 +7,6 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-  type CarouselApi
 } from "@/components/ui/carousel"
 import { Button } from "@/components/ui/button"
 import {
@@ -16,7 +15,6 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover"
 import { AppTypes } from '@/types'
-import Image from 'next/image'
 import { ComponentProps } from 'react'
 
 interface ProjectsCarouselProps {
