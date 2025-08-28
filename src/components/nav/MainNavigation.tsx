@@ -12,7 +12,7 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu"
 import { Button } from "@/components/ui/button"
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet"
 import { Menu } from "lucide-react"
 
 export function MainNavigation() {
@@ -126,7 +126,7 @@ export function MainNavigation() {
           </NavigationMenuList>
         </NavigationMenu>
 
-        <div className="flex flex-1 items-center justify-between space-x-2 md:justify-end pl-12">
+        <div className="flex flex-1 items-start justify-between space-x-2 md:justify-end">
           {/* Mobile Menu */}
           <div className="flex md:hidden">
             <Sheet>
@@ -137,48 +137,49 @@ export function MainNavigation() {
                 </Button>
               </SheetTrigger>
               <SheetContent side="right" className="w-[300px] sm:w-[400px]">
-                <div className="sr-only">
-                  <h2>Menu</h2>
-                </div>
-                <nav className="flex flex-col gap-6 mt-6">
+                <SheetTitle className="sr-only">Menu</SheetTitle>
+                <nav className="flex flex-col gap-6 mt-10 px-4">
                   <div className="flex flex-col space-y-4">
                     <Link
                       href="/"
                       className={`flex items-center py-2 px-3 text-lg font-medium rounded-md transition-colors hover:text-foreground/80 ${
                         pathname === '/' 
-                          ? 'bg-black text-white dark:bg-foreground dark:text-background' 
-                          : 'hover:bg-accent hover:text-accent-foreground'
+                          ? '!bg-black !text-white hover:!bg-black/90 dark:!bg-foreground dark:!text-background' 
+                          : 'hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground data-[state=open]:bg-accent/50'
                       }`}
                     >
                       About
                     </Link>
                     
                     <div className="flex flex-col space-y-3">
-                      <span className={`text-lg font-medium px-3 py-2 rounded-md ${
-                        pathname.includes('projects') 
-                          ? 'bg-black text-white dark:bg-foreground dark:text-background' 
-                          : ''
-                      }`}>
+                      <Link
+                        href="/projects"
+                        className={`flex items-center py-2 px-3 text-lg font-medium rounded-md transition-colors hover:text-foreground/80 ${
+                          pathname.includes('projects')
+                            ? '!bg-black !text-white hover:!bg-black/90 dark:!bg-foreground dark:!text-background' 
+                            : 'hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground data-[state=open]:bg-accent/50'
+                        }`}
+                      >
                         Projects
-                      </span>
+                      </Link>
                       <div className="flex flex-col space-y-2 ml-4">
                         <Link
                           href="/projects"
-                          className="py-1 px-3 text-sm text-muted-foreground transition-colors hover:text-foreground rounded-md hover:bg-accent"
+                          className="py-1 px-3 text-md text-muted-foreground transition-colors hover:text-foreground rounded-md hover:bg-accent"
                         >
-                          Full Stack Projects
+                          Full Stack
                         </Link>
                         <Link
                           href="/projects#front-end"
-                          className="py-1 px-3 text-sm text-muted-foreground transition-colors hover:text-foreground rounded-md hover:bg-accent"
+                          className="py-1 px-3 text-md text-muted-foreground transition-colors hover:text-foreground rounded-md hover:bg-accent"
                         >
-                          Front-End Projects
+                          Front-End
                         </Link>
                         <Link
                           href="/projects#back-end"
-                          className="py-1 px-3 text-sm text-muted-foreground transition-colors hover:text-foreground rounded-md hover:bg-accent"
+                          className="py-1 px-3 text-md text-muted-foreground transition-colors hover:text-foreground rounded-md hover:bg-accent"
                         >
-                          Back-End Projects
+                          Back-End
                         </Link>
                       </div>
                     </div>
@@ -187,8 +188,8 @@ export function MainNavigation() {
                       href="/contact"
                       className={`flex items-center py-2 px-3 text-lg font-medium rounded-md transition-colors hover:text-foreground/80 ${
                         pathname === '/contact' 
-                          ? 'bg-black text-white dark:bg-foreground dark:text-background' 
-                          : 'hover:bg-accent hover:text-accent-foreground'
+                          ? '!bg-black !text-white hover:!bg-black/90 dark:!bg-foreground dark:!text-background' 
+                          : 'hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground data-[state=open]:bg-accent/50'
                       }`}
                     >
                       Contact
@@ -198,8 +199,8 @@ export function MainNavigation() {
                       href="/resume"
                       className={`flex items-center py-2 px-3 text-lg font-medium rounded-md transition-colors hover:text-foreground/80 ${
                         pathname === '/resume' 
-                          ? 'bg-black text-white dark:bg-foreground dark:text-background' 
-                          : 'hover:bg-accent hover:text-accent-foreground'
+                          ? '!bg-black !text-white hover:!bg-black/90 dark:!bg-foreground dark:!text-background' 
+                          : 'hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground data-[state=open]:bg-accent/50'
                       }`}
                     >
                       Resume

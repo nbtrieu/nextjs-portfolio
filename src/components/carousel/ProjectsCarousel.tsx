@@ -1,3 +1,4 @@
+// src/components/carousel/ProjectsCarousel.tsx
 import { GitBranch } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from "@/components/ui/card"
 import {
