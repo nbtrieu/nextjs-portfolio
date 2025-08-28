@@ -26,8 +26,8 @@ export default function Projects() {
               </h3>
               <ProjectsCarousel
                 projects={sectionProjects}
-                carouselClassName='w-full max-w-xs sm:max-w-md lg:max-w-xlg'
-                itemClassName='basis-full sm:basis-1/2 lg:basis-1/3'
+                carouselClassName='w-full max-w-sm sm:max-w-none'
+                itemClassName='basis-full sm:basis-1/2 lg:basis-1/3 flex pl-4'
                 showDetails={true}
               />
             </section>
