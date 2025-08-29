@@ -25,13 +25,13 @@ export function NameTag() {
   const isDark = resolvedTheme === 'dark'
 
   return (
-    <Image
+      <Image
       src={isDark ? "name-dark.svg" : "name.svg"}
-      draggable="false"
-      className="h-12 sm:h-15 w-auto"
-      alt="Nicole Trieu"
-      width={200}
-      height={50} 
-    />
+        draggable="false"
+        className="h-12 sm:h-15 w-auto opacity-0 fade-in-animation"
+        alt="Nicole Trieu"
+        width={200}
+        height={50} 
+      />
   )
 }

@@ -18,7 +18,7 @@ export default function Home() {
           Nicole Trieu
         </h1> */}
         <NameTag/>
-        <p className="mb-6 sm:mb-6 text-sm sm:text-base mt-3 sm:mt-4 leading-relaxed">
+        <p className="mb-6 sm:mb-6 text-sm sm:text-base mt-3 sm:mt-4 leading-relaxed opacity-0 fade-in-up-animation">
           Hi! I&apos;m a full stack developer who used to teach science before getting into coding. 
           I really enjoy the puzzle-solving aspect of development - breaking down complex 
           problems and figuring out how all the pieces fit together. My teaching 
@@ -32,7 +32,7 @@ export default function Home() {
         plugins={[plugin.current]}
         onMouseEnter={plugin.current.stop}
         onMouseLeave={plugin.current.reset}
-        carouselClassName='w-full max-w-sm sm:max-w-none'
+        carouselClassName='w-full max-w-sm sm:max-w-none opacity-0 fade-in-up-animation'
         itemClassName='basis-full sm:basis-1/2 flex pl-4'
         prevNextClassName='hidden sm:flex'
       />

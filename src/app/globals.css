@@ -130,3 +130,72 @@
 html {
   scroll-behavior: smooth;
 }
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.fade-in-animation {
+  animation: fadeIn 0.8s ease-in-out 0.3s forwards;
+}
+
+@keyframes fadeInUp {
+  0% { 
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up-animation {
+  animation: fadeInUp 0.8s ease-in-out 0.3s forwards;
+}
+
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.fade-in-scale-animation {
+  animation: fadeInScale 0.8s ease-in-out 0.3s forwards;
+}
+
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.fade-in-left-animation {
+  animation: fadeInLeft 0.8s ease-in-out 0.3s forwards;
+}
+
+@keyframes revealLeft {
+  0% {
+    opacity: 1;
+    clip-path: inset(0 100% 0 0);
+  }
+  100% {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+.reveal-left-animation {
+  animation: revealLeft 0.8s ease-out forwards;
+}
