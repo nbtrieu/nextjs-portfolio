@@ -24,6 +24,7 @@ interface ProjectsCarouselProps {
   onMouseLeave?: () => void
   carouselClassName?: string
   itemClassName?: string
+  prevNextClassName?: string
   showDetails?: boolean
 }
 
@@ -32,8 +33,9 @@ export function ProjectsCarousel({
   plugins,
   onMouseEnter,
   onMouseLeave,
-  carouselClassName = "w-full max-w-xlg",
+  carouselClassName = "",
   itemClassName = "",
+  prevNextClassName = "",
   showDetails = false
 }: ProjectsCarouselProps) {
   return (
@@ -104,8 +106,8 @@ export function ProjectsCarousel({
           </CarouselItem>
         ))}
       </CarouselContent>
-      <CarouselPrevious />
-      <CarouselNext />
+      <CarouselPrevious className={prevNextClassName}/>
+      <CarouselNext className={prevNextClassName} />
     </Carousel>
   )
 }

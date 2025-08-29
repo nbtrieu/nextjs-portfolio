@@ -59,8 +59,8 @@ export default function RootLayout({
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
         <MainNavigation />
-        <main className="flex-1 py-4 sm:py-6 lg:py-8">
-          <div className="px-4 sm:px-8 md:px-32 lg:px-32 xl:px-[300px]">
+        <main className="flex-1 py-10 sm:py-6 lg:py-8">
+          <div className="px-8 sm:px-8 md:px-32 lg:px-32 xl:px-[300px]">
             {children}
           </div>
         </main>
